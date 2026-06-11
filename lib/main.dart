@@ -15,12 +15,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF2E7D32),
+          seedColor: const Color Colors.green,
         ),
         useMaterial3: true,
         fontFamily: 'Roboto',
       ),
-      home: const LoginScreen(),
+      home: const SplashScreen(),
     );
   }
 }
