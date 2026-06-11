@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
-import 'screens/login_screen.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'screens/splash_screen.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+    await Hive.initFlutter();
+      await Hive.openBox('authBox');
+        runApp(const MyApp());
+        }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+        class MyApp extends StatelessWidget {
+          const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'AppScale',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color Colors.green,
-        ),
-        useMaterial3: true,
-        fontFamily: 'Roboto',
-      ),
-      home: const SplashScreen(),
-    );
-  }
-}
+            @override
+              Widget build(BuildContext context) {
+                  return MaterialApp(
+                    title: 'AppScale',
+                    debugShowCheckedModeBanner: false,
+                    theme: ThemeData(
+                      colorScheme: ColorScheme.fromSeed(
+                        seedColor: const Color(0xFF2E7D32),
+                      ),
+                    useMaterial3: true,
+                    fontFamily: 'Roboto',
+                                                                                    ),
+                  home: const SplashScreen(),
+                                                                                              );
+                                                                                                }
+                                                                                                }
